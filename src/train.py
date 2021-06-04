@@ -152,7 +152,6 @@ if __name__ == '__main__':
                     0.5,
                     shuffle=False,
                     k_iwae=num_samples,
-                    model_name=args.net,
                 )
         if itr % 100 == 0 and args.save:
             torch.save({
