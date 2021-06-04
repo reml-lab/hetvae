@@ -33,6 +33,11 @@ python3 train.py --niters 2000 --lr 0.0001 --batch-size 128 --rec-hidden 16 --la
 ```
 
 
+## Demo
+
+This [notebook](src/synthetic_data_interpolation.ipynb) provides an example to reproduce the visualizations in the paper on synthetic dataset.
+
+
 ## Ablations
 
 Different components of the HeTVAE model are denoted as: HET: heteroscedastic output layer, ALO: augmented learning objective, INT: intensity encoding, DET: deterministic pathway. To reproduce the ablation results on PhysioNet, run the following commands:
