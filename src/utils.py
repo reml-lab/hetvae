@@ -116,8 +116,6 @@ def get_mimiciii_data(batch_size, test_batch_size=5, filter_anomalies=True):
     x = np.load("../../neuraltimeseries/Dataset/final_input3.npy")
     x = x[:, :25]
     x = np.transpose(x, (0, 2, 1))
-
-    # normalize values and time
     observed_vals, observed_mask, observed_tp = (
         x[:, :, :input_dim],
         x[:, :, input_dim: 2 * input_dim],
