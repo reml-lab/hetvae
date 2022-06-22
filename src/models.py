@@ -26,6 +26,7 @@ def load_network(args, dim, union_tp=None, device="cuda"):
             mse_weight=args.mse_weight,
             norm=args.norm,
             mixing=args.mixing,
+            device=device
         ).to(device)
     elif args.net == 'hetvae_det':
         net = HeTVAE_DET(
@@ -46,6 +47,7 @@ def load_network(args, dim, union_tp=None, device="cuda"):
             mse_weight=args.mse_weight,
             norm=args.norm,
             mixing=args.mixing,
+            device=device
         ).to(device)
     elif args.net == 'hetvae_prob':
         net = HeTVAE_PROB(
@@ -66,6 +68,7 @@ def load_network(args, dim, union_tp=None, device="cuda"):
             mse_weight=args.mse_weight,
             norm=args.norm,
             mixing=args.mixing,
+            device=device
         ).to(device)
     else:
         raise ValueError("Network not available")
