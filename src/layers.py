@@ -54,6 +54,7 @@ class UnTAN(nn.Module):
         union_tp=None,
         dropout=0.0,
         no_mix=True,
+        device = 'cuda'
     ):
         super().__init__()
         assert embed_time % num_heads == 0
@@ -69,7 +70,7 @@ class UnTAN(nn.Module):
             nn.Linear(embed_time, embed_time, bias=False),
             nn.Linear(input_size * num_heads, nhidden, bias=False)
         ])
-        self.time_emb = TimeEmbedding(embed_time, arg='periodic')
+        self.time_emb = TimeEmbedding(embed_time, arg='periodic',device=device)
         self.dropout = nn.Dropout(p=dropout)
         self.union_tp = union_tp
         self.no_mix = no_mix
